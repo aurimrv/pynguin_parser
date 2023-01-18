@@ -17,7 +17,7 @@ class Transformer(ast.NodeTransformer):
             for i in range(0,len(node.decorator_list)):
                 e = node.decorator_list[i]
                 if (isinstance(e,ast.Call)):
-                    # Assumindo que sempre o strict será o primeiro elemento da lista
+                    # Assumindo que sempre o strict será o primeiro elemento da lista.
                     k = e.keywords[0]
                     # Function with 'strict' annotation, change to False and remove last body statement
                     if (k.arg == 'strict'):
