@@ -23,6 +23,8 @@ class Transformer(ast.NodeTransformer):
                     if (k.arg == 'strict'):
                         k.value=ast.Constant(value=False)
                         node.body = node.body[:-1]
+                        #Removendo decorator strict
+                        del(node.decorator_list[i])
         return node
 
 def main(filename=None):
